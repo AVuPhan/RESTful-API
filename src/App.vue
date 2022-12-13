@@ -44,6 +44,12 @@ export default {
     },
     methods: {
         viewMap(event) {
+            if(this.neighborhoods.length !== 0){
+                let url = 'http://localhost:8000/neighborhoods?neighborhood_number=' + this.neighborhoods.toString;
+                this.getJSON(url).then((result) => {
+
+                });
+            }
             this.view = 'map';
         },
 
@@ -124,6 +130,11 @@ export default {
         <div class="grid-container">
             <div class="grid-x grid-padding-x">
                 <div id="leafletmap" class="cell auto"></div>
+            </div>
+            <div class="grid-x grid-padding-x">
+                <label for="address">Address or Lat/Long:</label><br>
+                <input type="text" name="address"><br>
+                <button type="button" @click="viewMap">Submit</button>
             </div>
         </div>
     </div>
