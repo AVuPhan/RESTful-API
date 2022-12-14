@@ -155,7 +155,7 @@ export default {
             <div class="grid-x grid-padding-x">
                 <label for="address">Address or Lat/Long:</label><br>
                 <input type="text" name="address"><br>
-                <button type="button" @click="viewMap">Submit</button>
+                <button class = button type="button" @click="viewMap">Submit</button>
             </div>
         </div>
     </div>
@@ -164,6 +164,7 @@ export default {
         <div class="grid-container">
             <div>
                 <h1>New Incident Form</h1>
+                <h2>Please Fill Out All Relevant Fields</h2>
                 <div>
                 <label for="case_number">Case Number</label><br>
                 <input type="text" v-model = "case_number_value" name="case_number">
@@ -180,7 +181,7 @@ export default {
                 <label for="block">Block</label><br>
                 <input type="text" v-model = "block_value" name="block">
             </div>
-            <button type="submit" @click="createNewIncidentForm">Submit</button>
+            <button class=button type="submit" @click="createNewIncidentForm">Submit</button>
             </div>
         </div>
     </div>
@@ -212,5 +213,8 @@ export default {
     border: solid 1px white;
     text-align: center;
     cursor: pointer;
+}
+button{
+    margin: 25px 5px 20px 20px;
 }
 </style>
