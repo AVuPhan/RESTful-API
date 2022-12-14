@@ -44,7 +44,8 @@ export default {
     },
     methods: {
         viewMap(event) {
-            if(this.neighborhoods.length !== 0){
+            
+            if(this.address_search !== ''){
                 let url = 'http://localhost:8000/neighborhoods?neighborhood_number=' + this.neighborhoods.toString;
                 this.getJSON(url).then((result) => {
 
@@ -154,8 +155,8 @@ export default {
             </div>
             <div class="grid-x grid-padding-x">
                 <label for="address">Address or Lat/Long:</label><br>
-                <input type="text" name="address"><br>
-                <button class = button type="button" @click="viewMap">Submit</button>
+                <input type="text" name="address" v-model="address_search"><br>
+                <button class = button type="submit" @click="viewMap">Submit</button>
             </div>
         </div>
     </div>
@@ -189,7 +190,17 @@ export default {
         <!-- Replace this with your actual about the project content: can be done here or by making a new component -->
         <div class="grid-container">
             <div class="grid-x grid-padding-x">
-                <h1 class="cell auto">About the Project</h1>
+                <h1 class="cell auto">About the Project</h1><br>
+                <h2 class="cell auto">Creators</h2><br>
+                <h3 class="cell auto">Andy Phan</h3><br>
+                <!-- Insert Image Here -->
+                <p class="cell auto"></p><br>
+                <h3 class="cell auto">Carynn Vuong</h3><br>
+                <!-- Insert Image Here -->
+                <p class="cell auto"></p><br>
+                <h3 class="cell auto">Matthew Pastrana</h3><br>
+                <!-- Insert Image Here -->
+                <p class="cell auto"></p><br>
             </div>
         </div>
     </div>
