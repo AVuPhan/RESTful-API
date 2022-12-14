@@ -45,6 +45,7 @@ export default {
     methods: {
         viewMap(event) {
             if(this.address_search !== ''){
+                
                 let url = 'http://localhost:8000/incidents?neighborhood=' + this.neighborhoods.toString;
                 this.getJSON(url).then((result) => {
 
