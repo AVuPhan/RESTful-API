@@ -57,6 +57,27 @@ export default {
             this.view = 'new_incident';
         },
 
+        //create new method for new incident form
+        createNewIncidentForm(event){
+            console.log("does this work?");
+            console.log(this.case_number_value);
+            console.log(this.datetime);
+            console.log(this.incident_value);
+            console.log(this.code_value);
+            console.log(this.police_grid_value);
+            console.log(this.neighborhood_number_value);
+            console.log(this.block_value);
+            let url = 'http://localhost:8000/new-incident';
+            let payload = {"case_number":this.case_number_value, "datetime":this.datetime, "code":this.code_value, "incident":this.incident_value, 
+            "police_grid":this.police_grid_value, "neighborhood_number":this.neighborhood_number_value, "block":this.block_value};
+            this.uploadJSON('PUT', url, payload).then((result) => {
+                console.log(result);
+
+});
+            //now that I have the url and access to data, need to do put request and 
+            //create JSON payload with the values
+        },
+
         viewAbout(event) {
             this.view = 'about';
         },
@@ -141,8 +162,25 @@ export default {
     <div v-if="view === 'new_incident'">
         <!-- Replace this with your actual form: can be done here or by making a new component -->
         <div class="grid-container">
-            <div class="grid-x grid-padding-x">
-                <h1 class="cell auto">New Incident Form</h1>
+            <div>
+                <h1>New Incident Form</h1>
+                <div>
+                <label for="case_number">Case Number</label><br>
+                <input type="text" v-model = "case_number_value" name="case_number">
+                <label for="date_time">Date and Time</label><br>
+                <input type="datetime-local" v-model="datetime" name="date_time">
+                <label for="incident">Incident</label><br>
+                <input type="text" v-model = "incident_value" name="incident">
+                <label for="code">Code</label><br>
+                <input type="number" v-model = "code_value" name="code">
+                <label for="police_grid">Police Grid</label><br>
+                <input type="number" v-model = "police_grid_value" name="police_grid">
+                <label for="neighborhood_number">Neighborhood Number</label><br>
+                <input type="number" v-model = "neighborhood_number_value" name="neighborhood_number">
+                <label for="block">Block</label><br>
+                <input type="text" v-model = "block_value" name="block">
+            </div>
+            <button type="submit" @click="createNewIncidentForm">Submit</button>
             </div>
         </div>
     </div>
