@@ -44,9 +44,14 @@ export default {
     },
     methods: {
         viewMap(event) {
-            
             if(this.address_search !== ''){
-                let url = 'http://localhost:8000/neighborhoods?neighborhood_number=' + this.neighborhoods.toString;
+                let url = 'http://localhost:8000/incidents?neighborhood=' + this.neighborhoods.toString;
+                this.getJSON(url).then((result) => {
+
+                });
+            }
+            else{
+                let url = 'http://localhost:8000/incidents';
                 this.getJSON(url).then((result) => {
 
                 });
@@ -157,6 +162,7 @@ export default {
                 <label for="address">Address or Lat/Long:</label><br>
                 <input type="text" name="address" v-model="address_search"><br>
                 <button class = button type="submit" @click="viewMap">Submit</button>
+                <AddressSearch :result_array="search_results" />
             </div>
         </div>
     </div>
