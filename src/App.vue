@@ -204,18 +204,45 @@ export default {
         <!-- Replace this with your actual about the project content: can be done here or by making a new component -->
         <div class="grid-container">
             <div class="grid-x grid-padding-x">
-                <h1 class="cell auto">About the Project</h1><br>
-                <h2 class="cell auto">Creators</h2><br>
-                <h3 class="cell auto">Andy Phan</h3><br>
-                <!-- Insert Image Here -->
-                <p class="cell auto"></p><br>
-                <h3 class="cell auto">Carynn Vuong</h3><br>
-                <!-- Insert Image Here -->
-                <p class="cell auto"></p><br>
-                <h3 class="cell auto">Matthew Pastrana</h3><br>
-                <!-- Insert Image Here -->
-                <p class="cell auto"></p><br>
+                <div class="cell small-auto large-auto" style="background-color:whitesmoke" >
+                    <h1 style="text-align: center;">Creators</h1>                
+                </div>
             </div>
+
+            <div class="grid-x grid-padding-x">
+                    <div class="cell small-auto large-4">
+                        <h2>Andy Phan</h2>
+                        <img src="imgs\DSC08631-25 (2).jpg" alt="andyphanphoto" id="img">
+                        <br/>
+                        <p>
+                            My name is Andy and am from Burnsville MN. I am a senior studying computer science at the University of St. Thomas. Currently I have no concrete 
+                            plans after college but I do want to find a job at a company where their values align with my own. Outside of work and school, I like to hang out 
+                            with my friends and play frisbee gold during my free time. Some of my hobbies include camping, mountain biking, and pretty much anytihng outdoors.
+                        </p>
+                    </div>
+
+                    <div class="cell small-auto large-4">
+                        <h2>Carynn Vuong</h2>
+                        <!--Insert img link in line below-->
+                        <img src="" alt="carynnvuongphoto" id="img">
+                        <br/>
+                        <p>Insert carynn bio here</p>
+                    </div>
+
+                    <div class="cell small-auto large-4">
+                        <h2>Matthew Pastrana</h2>
+                        <!--Insert img link in line below-->
+                        <img src="" alt="pastramiphoto" id="img">
+                        <br/>
+                        <p>Insert pastrami bio here</p>
+                    </div>
+                </div>
+
+                <div class="cell small-auto large-auto" style="background-color:whitesmoke">
+                    <h3 style="text-align:center;">Video Presentation</h3>
+                    <!--Embed youtube video here-->
+                </div>
+
         </div>
     </div>
 </template>
@@ -241,5 +268,13 @@ export default {
 }
 button{
     margin: 25px 5px 20px 20px;
+}
+#img{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 10px 10px 5px #ccc;
+    border-radius: 25px;
+    width: 20em;
 }
 </style>
