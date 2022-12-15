@@ -26,7 +26,6 @@ export default {
         </thead>
         <tbody>
             <tr v-for="(item, index) in result_array">
-                <td :class="(index % 2 === 0) ? 'even' : 'odd'">{{ index }}</td>
                 <td :class="(index % 2 === 0) ? 'even' : 'odd'">{{ item.case_number }}</td>
                 <td :class="(index % 2 === 0) ? 'even' : 'odd'">{{ item.date }}</td>
                 <td :class="(index % 2 === 0) ? 'even' : 'odd'">{{ item.time }}</td>

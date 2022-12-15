@@ -58,7 +58,7 @@ export default {
                 .catch((err) => {
                     console.log(err);
                 });
-                
+
             this.view = 'map';
         },
 
@@ -77,7 +77,7 @@ export default {
             console.log(this.neighborhood_number_value);
             console.log(this.block_value);
             let url = 'http://localhost:8080/new-incident';
-            let payload = {"case_number":this.case_number_value, "datetime":this.datetime, "code":this.code_value, "incident":this.incident_value, 
+            let payload = {"case_number":this.case_number_value, "datetime":this.datetime+':00', "code":this.code_value, "incident":this.incident_value, 
             "police_grid":this.police_grid_value, "neighborhood_number":this.neighborhood_number_value, "block":this.block_value};
             this.uploadJSON('PUT', url, payload).then((result) => {
                 console.log(result);
