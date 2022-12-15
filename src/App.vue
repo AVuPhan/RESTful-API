@@ -8,6 +8,7 @@ export default {
             codes: [],
             neighborhoods: [],
             incidents: [],
+            result: "",
             leaflet: {
                 map: null,
                 center: {
@@ -44,13 +45,20 @@ export default {
     },
     methods: {
         viewMap(event) {
+            this.view = 'map';
+        },
+
+        //need a new method so it doesn't mess with the starter code, put everything from viewMap to below:
+        addressSearch(event){
+            console.log(this.result);
+            /*
             if(this.neighborhoods.length !== 0){
                 let url = 'http://localhost:8000/neighborhoods?neighborhood_number=' + this.neighborhoods.toString;
                 this.getJSON(url).then((result) => {
 
                 });
             }
-            this.view = 'map';
+            */
         },
 
         viewNewIncident(event) {
@@ -60,6 +68,7 @@ export default {
         //create new method for new incident form
         createNewIncidentForm(event){
             console.log("does this work?");
+            /*
             console.log(this.case_number_value);
             console.log(this.datetime);
             console.log(this.incident_value);
@@ -67,15 +76,16 @@ export default {
             console.log(this.police_grid_value);
             console.log(this.neighborhood_number_value);
             console.log(this.block_value);
-            let url = 'http://localhost:8000/new-incident';
-            let payload = {"case_number":this.case_number_value, "datetime":this.datetime, "code":this.code_value, "incident":this.incident_value, 
+            */
+           //now that I have the url and access to data, need to do put request and create JSON payload with the values
+            let url = 'http://localhost:8080/new-incident';
+            let payload = {"case_number":this.case_number_value, "datetime":this.datetime+':00', "code":this.code_value, "incident":this.incident_value, 
             "police_grid":this.police_grid_value, "neighborhood_number":this.neighborhood_number_value, "block":this.block_value};
+            console.log(payload);
             this.uploadJSON('PUT', url, payload).then((result) => {
                 console.log(result);
-
 });
-            //now that I have the url and access to data, need to do put request and 
-            //create JSON payload with the values
+
         },
 
         viewAbout(event) {
@@ -154,8 +164,8 @@ export default {
             </div>
             <div class="grid-x grid-padding-x">
                 <label for="address">Address or Lat/Long:</label><br>
-                <input type="text" name="address"><br>
-                <button class = button type="button" @click="viewMap">Submit</button>
+                <input type="text" name="address" v-model="result"><br>
+                <button class = button type="button" @click="addressSearch">Submit</button>
             </div>
         </div>
     </div>
