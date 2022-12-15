@@ -1,5 +1,6 @@
 <script>
 import $ from 'jquery'
+import AddressSearch from './components/AddressSearch.vue'
 
 export default {
     data() {
@@ -42,21 +43,21 @@ export default {
             }
         };
     },
+    components: {
+        AddressSearch
+    },
     methods: {
         viewMap(event) {
-            if(this.address_search !== ''){
-
-                let url = 'http://localhost:8000/incidents?neighborhood=' + this.neighborhoods.toString;
-                this.getJSON(url).then((result) => {
-
-                });
-            }
-            else{
-                let url = 'http://localhost:8000/incidents';
-                this.getJSON(url).then((result) => {
-
-                });
-            }
+            let url = 'http://localhost:8080/incidents';
+                this.getJSON(url)
+                .then((result) => {
+                    console.log(result);
+                    this.incidents = result;
+                    console.log(this.incidents);
+                })
+                .catch((err) => {
+                    console.log(err);
+                })
             this.view = 'map';
         },
 
@@ -163,7 +164,7 @@ export default {
                 <label for="address">Address or Lat/Long:</label><br>
                 <input type="text" name="address" v-model="address_search"><br>
                 <button class = button type="submit" @click="viewMap">Submit</button>
-                <AddressSearch :result_array="search_results" />
+                <AddressSearch :result_array="incidents" />
             </div>
         </div>
     </div>
