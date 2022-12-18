@@ -1,6 +1,6 @@
 <script>
 import $ from "jquery";
-import AddressSearch from "./components/AddressSearch.vue";
+import IncidentsTable from "./components/IncidentsTable.vue";
 
 
 export default {
@@ -46,7 +46,7 @@ export default {
     };
   },
   components: {
-    AddressSearch,
+    IncidentsTable,
   },
   methods: {
     viewMap(event) {
@@ -274,7 +274,7 @@ export default {
 
         <input type="number" name="max_incidents" v-model="max_incidents" /><br />
         <button class="button" type="button" @click="viewMap">Crime Data</button>
-        <AddressSearch :result_array="incidents" />
+        <IncidentsTable :result_array="incidents" />
       </div>
     </div>
   </div>
