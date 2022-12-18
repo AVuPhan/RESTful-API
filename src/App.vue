@@ -270,7 +270,7 @@ export default {
       <div class="grid-x grid-padding-x">
         <label for="address">Address or Lat/Long:</label><br />
         <input type="text" name="address" v-model="result" /><br />
-        <button class="button" type="button" @click="viewMap">Submit</button>
+        <button class="button" type="button" @click="addressSearch">Submit</button>
 
         <input type="number" name="max_incidents" v-model="max_incidents" /><br />
         <button class="button" type="button" @click="viewMap">Crime Data</button>
