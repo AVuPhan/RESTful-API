@@ -322,7 +322,7 @@ export default {
       <div class="grid-x grid-padding-x">
         <div class="cell small-auto large-4">
           <h2>Andy Phan</h2>
-          <img src="imgs\DSC08631-25 (2).jpg" alt="andyphanphoto" id="img" />
+          <img src="imgs\DSC0863125.jpg" alt="andyphanphoto" id="img" />
           <br />
           <p>
             My name is Andy and am from Burnsville MN. I am a senior studying computer
@@ -337,7 +337,7 @@ export default {
         <div class="cell small-auto large-4">
           <h2>Carynn Vuong</h2>
           <!--Insert img link in line below-->
-          <img src="carynn.jpeg" alt="carynnphoto" id="img" />
+          <img src="imgs\carynn.jpeg" alt="carynnphoto" id="img" />
           <br />
           <p>
             Hi, my name is Carynn and I'm from San Francisco, CA. I'm a senior studying
