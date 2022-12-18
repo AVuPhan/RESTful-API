@@ -185,9 +185,18 @@ export default {
     ]);
 
     let district_boundary = new L.geoJson();
-    // district_boundary.addTo(this.leaflet.map);
+    district_boundary.addTo(this.leaflet.map);
 
-                // const someMarker = n
+    this.getJSON('/data/StPaulDistrictCouncil.geojson').then((result) => {
+      // St. Paul GeoJSON
+      $(result.features).each((key, value) => {
+        district_boundary.addData(value);
+      });
+      }).catch((error) => {
+        console.log('Error:', error);
+      });
+
+            //  const someMarker = n
             // someMarker.addTo(this.leaflet.map)
         
 /* this is complicated.. will be confusing to work around
