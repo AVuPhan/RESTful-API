@@ -271,6 +271,9 @@ export default {
         <label for="address">Address or Lat/Long:</label><br />
         <input type="text" name="address" v-model="result" /><br />
         <button class="button" type="button" @click="viewMap">Submit</button>
+
+        <input type="number" name="max_incidents" v-model="max_incidents" /><br />
+        <button class="button" type="button" @click="viewMap">Crime Data</button>
         <AddressSearch :result_array="incidents" />
       </div>
     </div>
@@ -349,7 +352,11 @@ export default {
           <!--Insert img link in line below-->
           <img src="" alt="pastramiphoto" id="img" />
           <br />
-          <p>Insert pastrami bio here</p>
+          <p>My name is Matthew Pastrana and I am from Shakopee Minnesota. I am currently a 
+            senior at the University of St. Thomas where I am studying Computer Science and 
+            Finance. I currently have not accepted a position any where for post graduation 
+            ,however, I am hoping to work in software development.
+          </p>
         </div>
 
         <div class="cell medium-auto large-5">
