@@ -19,7 +19,6 @@ export default {
                 <th>Date</th>
                 <th>Time</th>
                 <th>Incident Type</th>
-                <th>Incident</th>
                 <th>Police Grid</th>
                 <th>Neighborhood</th>
             </tr>
@@ -29,9 +28,9 @@ export default {
                 <td :class="(index % 2 === 0) ? 'even' : 'odd'">{{ item.case_number }}</td>
                 <td :class="(index % 2 === 0) ? 'even' : 'odd'">{{ item.date }}</td>
                 <td :class="(index % 2 === 0) ? 'even' : 'odd'">{{ item.time }}</td>
-                <td :class="(index % 2 === 0) ? 'even' : 'odd'">{{ item.code }}</td>
+                <td :class="(index % 2 === 0) ? 'even' : 'odd'">{{ item.incident }}</td>
                 <td :class="(index % 2 === 0) ? 'even' : 'odd'">{{ item.police_grid }}</td>
-                <td :class="(index % 2 === 0) ? 'even' : 'odd'">{{ item.neighborhood_number }}</td>
+                <td :class="(index % 2 === 0) ? 'even' : 'odd'">{{ item.neighborhood_name }}</td>
             </tr>
         </tbody>
     </table>

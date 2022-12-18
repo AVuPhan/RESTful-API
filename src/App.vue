@@ -50,6 +50,16 @@ export default {
   },
   methods: {
     viewMap(event) {
+      let url = 'http://localhost:8080/incidents';
+                this.getJSON(url)
+                .then((result) => {
+                    console.log(result);
+                    this.incidents = result;
+                    console.log(this.incidents);
+                })
+                .catch((err) => {
+                    console.log(err);
+                })
       this.view = "map";
     },
 
@@ -260,7 +270,8 @@ export default {
       <div class="grid-x grid-padding-x">
         <label for="address">Address or Lat/Long:</label><br />
         <input type="text" name="address" v-model="result" /><br />
-        <button class="button" type="button" @click="addressSearch">Submit</button>
+        <button class="button" type="button" @click="viewMap">Submit</button>
+        <AddressSearch :result_array="incidents" />
       </div>
     </div>
   </div>
