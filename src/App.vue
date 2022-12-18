@@ -78,7 +78,7 @@ export default {
             console.log('Got a lat/lon::::')
             const { lat, lon } = firstResult;
             console.log(lat, lon)
-            this.leaflet.map.setView([lat, lon]);
+            this.leaflet.map.setView([lat, lon], 15);
         }
     }).catch(err=>{
         console.error(err);
