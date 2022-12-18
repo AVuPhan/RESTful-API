@@ -350,7 +350,7 @@ export default {
         <div class="cell small-auto large-4">
           <h2>Matthew Pastrana</h2>
           <!--Insert img link in line below-->
-          <img src="" alt="pastramiphoto" id="img" />
+          <img src="imgs\PastranaHeadshot.jpg" alt="matthewpastranaphoto" id="img" />
           <br />
           <p>My name is Matthew Pastrana and I am from Shakopee Minnesota. I am currently a 
             senior at the University of St. Thomas where I am studying Computer Science and 
