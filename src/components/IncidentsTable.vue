@@ -7,8 +7,41 @@ export default {
         result_array() {
             console.log(this.result_array);
         }
+    },
+    methods: {
+        deleteIncident(event) {
+            console.log("Delete this: " + event);
+            let payload = {
+                code: event,
+            };
+                this.uploadJSON("DELETE", "http://localhost:8080/remove-incident", payload)
+                .then((result) => {
+                    console.log(result);
+                })
+                .catch((err) => {
+                    console.log(err);
+                })
+        },
+        uploadJSON(method, url, data) {
+        return new Promise((resolve, reject) => {
+            $.ajax({
+            type: method,
+            url: url,
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify(data),
+            dataType: "text",
+            success: (response) => {
+                resolve(response);
+            },
+            error: (status, message) => {
+                reject({ status: status.status, message: status.statusText });
+            },
+          });
+        });
+       }
+      }
     }
-}
+
 </script>
 
 <template>
@@ -31,6 +64,7 @@ export default {
                 <td :class="(index % 2 === 0) ? 'even' : 'odd'">{{ item.incident }}</td>
                 <td :class="(index % 2 === 0) ? 'even' : 'odd'">{{ item.police_grid }}</td>
                 <td :class="(index % 2 === 0) ? 'even' : 'odd'">{{ item.neighborhood_name }}</td>
+                <td><button class="button" type="button" @click="deleteIncident(item.case_number)">Delete Incident</button></td>
             </tr>
         </tbody>
     </table>
