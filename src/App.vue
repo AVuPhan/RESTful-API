@@ -486,15 +486,15 @@ export default {
       <div class="cell small-auto large-auto" style="background-color: whitesmoke">
         <h3 style="text-align: center">Video Presentation</h3>
         <!--Embed youtube video here-->
-        <iframe
-          style="display: block"
-          width="1000em"
-          height="480"
-          src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-          title="Rick Astley - Never Gonna Give You Up (Official Music Video)"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
+        <iframe 
+            style="display: block"
+            width="1000em" 
+            height="500em" 
+            src="https://www.youtube.com/embed/2y4dt2fvAV0" 
+            title="project 4 demo" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
         </iframe>
         <br />
       </div>
