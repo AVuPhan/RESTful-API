@@ -207,7 +207,7 @@ export default {
             //  const someMarker = n
             // someMarker.addTo(this.leaflet.map)
         
-/* this is complicated.. will be confusing to work around
+//* this is complicated.. will be confusing to work around
     this.getJSON("http://localhost:8080/incidents").then(async (result) => {
         const pins = {};
         for (const incident of result) {
@@ -240,7 +240,7 @@ export default {
             console.log(firstIncident);
         }
     });
-    */
+    //*/
 
     this.getJSON("/data/StPaulDistrictCouncil.geojson")
       .then((result) => {
