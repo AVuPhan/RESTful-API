@@ -51,12 +51,12 @@ export default {
   methods: {
     viewMap(event) {
       let url = 'http://localhost:8080/incidents';
-      if(this.startdatetime == null && this.enddatetime == null && this.incident_value == null && this.neighborhood_number_value == null){
+      if(this.startdatetime == null && this.enddatetime == null && this.incident_value == null && this.neighborhood_number_value == null && this.max_incidents == null){
       }
       else{
         url = url + "?"
-        if(this.startdatetime != null){
-          
+        if(this.max_incidents != null){
+          url = url + "limit=" + this.max_incidents;
         }
       }
       this.getJSON(url)
