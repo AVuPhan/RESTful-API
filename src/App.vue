@@ -363,17 +363,22 @@ export default {
       <div class="grid-x grid-padding-x">
         <!--<input type="number" name="max_incidents" v-model="max_incidents" /><br />-->
         <label for="date_time">Start Date and Time</label><br />
-        <input type="datetime-local" v-model="startdatetime" name="date_time"/>
+        <input type="date" v-model="startdatetime" name="date_time"/>
         <label for="date_time">End Date and Time</label><br />
-        <input type="datetime-local" v-model="enddatetime" name="date_time"/>
+        <input type="date" v-model="enddatetime" name="date_time"/>
         <label for="incident">Incident</label><br />
         <input type="text" v-model="incident_value" name="incident"/>
         <label for="neighborhood_number">Neighborhood Name</label><br/>
         <input type="number" v-model="neighborhood_number_value" name="neighborhood_number"/>
         <label for="max_incidents">Max Incidents</label>
         <input type="number" v-model="max_incidents" name="max_incidents"/>
-
         <button class="button" type="button" @click="viewMap">View Crime Data</button>
+        <div class="legend">
+          <p style="color: rgb(255, 0, 0)">Violent Crimes</p>
+          <p style="color: rgb(0, 140, 255)">Propert Crimes</p>
+          <p style="color: rgb(179, 179, 179)">Other Crimes</p>
+          <p></p>
+        </div>
         <IncidentsTable :result_array="incidents" />
       </div>
     </div>
@@ -454,15 +459,21 @@ export default {
           <br />
           <p>My name is Matthew Pastrana and I am from Shakopee Minnesota. I am currently a 
             senior at the University of St. Thomas where I am studying Computer Science and 
-            Finance. I currently have not accepted a position any where for post graduation 
-            ,however, I am hoping to work in software development.
+            Finance. I currently have not accepted a position any where for post graduation, 
+            however, I am hoping to work in software development.
           </p>
         </div>
 
-        <div class="cell medium-auto large-5">
+        <div class="cell medium-auto large-auto">
           <h2>Six Interesting Discoveries</h2>
-          <ol>
-            1.<br />2.<br />3.<br />4.<br />5.<br />6.<br />
+          <ol type="1">
+            <li>The majority of crimes commited were either property related or other</li>
+            <li>A large majority of the crimes were thefts</li>
+            <li>Capitol River had the most crime reported</li>
+            <li>Summit Hill had the least crime reported</li>
+            <li>Capitol River and Summit Hill share a border and are at oppisite ends in terms of crimes reported</li>
+            <li>Many neighborhoods fell between two extremes of crimes reported and not many where at the mean</li>
+            <li>On March 31st 2022 there were 16 crimes in the St. Thomas Neighborhood (Union Park & Macalester-Groveland). Almost half of them were Auto theft related.</li>
           </ol>
         </div>
       </div>
@@ -478,8 +489,8 @@ export default {
           title="Rick Astley - Never Gonna Give You Up (Official Music Video)"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
+          allowfullscreen>
+        </iframe>
         <br />
       </div>
       <br />
@@ -496,6 +507,11 @@ export default {
   background-color: rgb(10, 100, 126);
   color: white;
   border: solid 1px white;
+  text-align: center;
+  cursor: pointer;
+}
+.legend {
+  border: solid 1px rgb(0, 0, 0);
   text-align: center;
   cursor: pointer;
 }
