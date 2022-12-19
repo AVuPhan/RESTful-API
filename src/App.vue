@@ -287,9 +287,9 @@ export default {
       <div class="grid-x grid-padding-x">
         <!--<input type="number" name="max_incidents" v-model="max_incidents" /><br />-->
         <label for="date_time">Start Date and Time</label><br />
-        <input type="datetime-local" v-model="datetime" name="date_time"/>
+        <input type="datetime-local" v-model="startdatetime" name="date_time"/>
         <label for="date_time">End Date and Time</label><br />
-        <input type="datetime-local" v-model="datetime" name="date_time"/>
+        <input type="datetime-local" v-model="enddatetime" name="date_time"/>
         <label for="incident">Incident</label><br />
         <input type="text" v-model="incident_value" name="incident"/>
         <label for="neighborhood_number">Neighborhood Name</label><br/>
