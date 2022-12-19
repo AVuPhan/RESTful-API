@@ -18,7 +18,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/past6301/PROJECT4"
   },
   "scripts": {
     "dev": "vite",
