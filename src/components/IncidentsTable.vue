@@ -58,12 +58,30 @@ export default {
         </thead>
         <tbody>
             <tr v-for="(item, index) in result_array">
-                <td :class="(index % 2 === 0) ? 'even' : 'odd'">{{ item.case_number }}</td>
-                <td :class="(index % 2 === 0) ? 'even' : 'odd'">{{ item.date }}</td>
-                <td :class="(index % 2 === 0) ? 'even' : 'odd'">{{ item.time }}</td>
-                <td :class="(index % 2 === 0) ? 'even' : 'odd'">{{ item.incident }}</td>
-                <td :class="(index % 2 === 0) ? 'even' : 'odd'">{{ item.police_grid }}</td>
-                <td :class="(index % 2 === 0) ? 'even' : 'odd'">{{ item.neighborhood_name }}</td>
+                <td v-if="item.code == 614 || (item.code >= 1800 && item.code <= 99826)" class="other">{{ item.case_number }}</td>
+                <td v-else-if="(item.code >= 100 && item.code <= 200) || (item.code >= 400 && item.code <= 453) || (item.code >= 810 && item.code <= 863)" class="violent">{{ item.case_number }}</td>
+                <td v-else class="property">{{ item.case_number }}</td>
+
+                <td v-if="item.code == 614 || (item.code >= 1800 && item.code <= 99826)" class="other">{{ item.date }}</td>
+                <td v-else-if="(item.code >= 100 && item.code <= 200) || (item.code >= 400 && item.code <= 453) || (item.code >= 810 && item.code <= 863)" class="violent">{{ item.date }}</td>
+                <td v-else class="property">{{ item.date }}</td>
+
+                <td v-if="item.code == 614 || (item.code >= 1800 && item.code <= 99826)" class="other">{{ item.time }}</td>
+                <td v-else-if="(item.code >= 100 && item.code <= 200) || (item.code >= 400 && item.code <= 453) || (item.code >= 810 && item.code <= 863)" class="violent">{{ item.time }}</td>
+                <td v-else class="property">{{ item.time }}</td>
+
+                <td v-if="item.code == 614 || (item.code >= 1800 && item.code <= 99826)" class="other">{{ item.incident }}</td>
+                <td v-else-if="(item.code >= 100 && item.code <= 200) || (item.code >= 400 && item.code <= 453) || (item.code >= 810 && item.code <= 863)" class="violent">{{ item.incident }}</td>
+                <td v-else class="property">{{ item.incident }}</td>
+
+                <td v-if="item.code == 614 || (item.code >= 1800 && item.code <= 99826)" class="other">{{ item.police_grid }}</td>
+                <td v-else-if="(item.code >= 100 && item.code <= 200) || (item.code >= 400 && item.code <= 453) || (item.code >= 810 && item.code <= 863)" class="violent">{{ item.police_grid }}</td>
+                <td v-else class="property">{{ item.police_grid }}</td>
+
+                <td v-if="item.code == 614 || (item.code >= 1800 && item.code <= 99826)" class="other">{{ item.neighborhood_name }}</td>
+                <td v-else-if="(item.code >= 100 && item.code <= 200) || (item.code >= 400 && item.code <= 453) || (item.code >= 810 && item.code <= 863)" class="violent">{{ item.neighborhood_name }}</td>
+                <td v-else class="property">{{ item.neighborhood_name }}</td>
+
                 <td><button class="button" type="button" @click="deleteIncident(item.case_number)">Delete Incident</button></td>
             </tr>
         </tbody>
@@ -71,16 +89,21 @@ export default {
 </template>
 
 <style>
-.even {
+.violent {
     width: 40rem;
     margin: 0;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(255, 0, 0);
+}
+.property {
+    width: 40rem;
+    margin: 0;
+    background-color: rgb(0, 140, 255);
 }
 
-.odd {
+.other {
     width: 40rem;
     margin: 0;
-    background-color: rgb(88, 88, 88);
+    background-color: rgb(179, 179, 179);
 }
 .no_image {
     height: 80px;
