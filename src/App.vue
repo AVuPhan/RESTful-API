@@ -444,6 +444,7 @@ export default {
             <li>Summit Hill had the least crime reported</li>
             <li>Capitol River and Summit Hill share a border and are at oppisite ends in terms of crimes reported</li>
             <li>Many neighborhoods fell between two extremes of crimes reported and not many where at the mean</li>
+            <li>On March 31st 2022 there were 16 crimes in the St. Thomas Neighborhood (Union Park & Macalester-Groveland). Almost half of them were Auto theft related.</li>
           </ol>
         </div>
       </div>
