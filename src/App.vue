@@ -280,9 +280,28 @@ export default {
         <label for="address">Address or Lat/Long:</label><br />
         <input type="text" name="address" v-model="result" /><br />
         <button class="button" type="button" @click="addressSearch">Submit</button>
+      </div>
+      <div>
+        <h4>Search Filters</h4>
+      </div>
+      <div class="grid-x grid-padding-x">
+        <!--<input type="number" name="max_incidents" v-model="max_incidents" /><br />-->
+        <label for="case_number">Case Number</label><br />
+        <input type="text" v-model="case_number_value" name="case_number" />
+        <label for="date_time">Start Date and Time</label><br />
+        <input type="datetime-local" v-model="datetime" name="date_time" />
+        <label for="date_time">End Date and Time</label><br />
+        <input type="datetime-local" v-model="datetime" name="date_time" />
+        <label for="incident">Incident</label><br />
+        <input type="text" v-model="incident_value" name="incident" />
+        <label for="code">Code</label><br />
+        <input type="number" v-model="code_value" name="code" />
+        <label for="police_grid">Police Grid</label><br />
+        <input type="number" v-model="police_grid_value" name="police_grid" />
+        <label for="neighborhood_number">Neighborhood Number</label><br />
+        <input type="number" v-model="neighborhood_number_value" name="neighborhood_number"/>
 
-        <input type="number" name="max_incidents" v-model="max_incidents" /><br />
-        <button class="button" type="button" @click="viewMap">Crime Data</button>
+        <button class="button" type="button" @click="viewMap">View Crime Data</button>
         <IncidentsTable :result_array="incidents" />
       </div>
     </div>
