@@ -51,15 +51,23 @@ export default {
   methods: {
     viewMap(event) {
       let url = 'http://localhost:8080/incidents';
-                this.getJSON(url)
-                .then((result) => {
-                    console.log(result);
-                    this.incidents = result;
-                    console.log(this.incidents);
-                })
-                .catch((err) => {
-                    console.log(err);
-                })
+      if(this.startdatetime == null && this.enddatetime == null && this.incident_value == null && this.neighborhood_number_value == null){
+      }
+      else{
+        url = url + "?"
+        if(this.startdatetime != null){
+          
+        }
+      }
+      this.getJSON(url)
+        .then((result) => {
+          console.log(result);
+          this.incidents = result;
+          console.log(this.incidents);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
       this.view = "map";
     },
 
