@@ -92,7 +92,6 @@ export default {
       }
       this.getJSON(url)
         .then((result) => {
-          console.log("hello");
           console.log(result);
           this.incidents = result;
           console.log("What are these: " + this.incidents[0]);
@@ -271,16 +270,13 @@ export default {
         return strs.join(' '); 
       }
 
-
-        for (const incident of uniqueIncidents) {
+      for (const incident of uniqueIncidents) {
           const { block } = incident;
           const address = `${formatBlock (block)} ST PAUL`;
           const [res] = JSON.parse((await this.uploadJSON('POST', 'http://localhost:8080/lookup', { address }))) ?? [];
                 if (res && res.lat && res.lon) {
-                    //console.log('GOT A THING TO DRAW')
                     new L.Marker({
                         ...res,
-                        color: "red",
                         zIndexOffset: 1000
                     }).addTo(this.leaflet.map);
                 }
@@ -296,16 +292,25 @@ export default {
                 const address = `${formatBlock (block)} ST PAUL`;
                 const [res] = JSON.parse((await this.uploadJSON('POST', 'http://localhost:8080/lookup', { address }))) ?? [];
                 if (res && res.lat && res.lon) {
-                    //console.log('GOT A THING TO DRAW')
                     const arrayOfIncidentsInThisPin = pins[pinKey]
-                    //console.log('types: ', arrayOfIncidentsInThisPin.map(e=>e.incident));
-                    new L.Marker({
+                    const popupContent = `<p> incidents in this neighborhood: ${arrayOfIncidentsInThisPin.length}</p>`
+                    const marker = new L.Marker({
                         ...res,
-                        zIndexOffset: 1000
-                    }).addTo(this.leaflet.map);
+                        zIndexOffset: 1000,
+                        riseOnHover: true,
+                        interactive: true
+                    })
+                    marker.bindPopup(popupContent);
+                    marker.on('mouseover',function(ev){
+                      ev.target.openPopup();
+                    });
+                    marker.on('mouseout',function(ev){
+                      ev.target.closePopup();
+                    });
+                    marker.addTo(this.leaflet.map);
+
                 }
             }
-            //console.log(firstIncident);
         }
     });
     
