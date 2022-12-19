@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "RESTful Web Server and Single Page Application",
   "author": {
-    "name": "",
-    "email": ""
+    "name": "Matthew Pastrana",
+    "email": "past6301@stthomas.edu"
   },
   "contributors": [
     {
@@ -14,10 +14,6 @@
     {
       "name": "Carynn Vuong",
       "email": "vuon7009@stthomas.edu"
-    },
-    {
-      "name": "Matthew Pastrana",
-      "email": "past6301@stthomas.edu"
     }
   ],
   "repository": {
