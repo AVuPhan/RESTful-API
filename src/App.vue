@@ -425,15 +425,20 @@ export default {
           <br />
           <p>My name is Matthew Pastrana and I am from Shakopee Minnesota. I am currently a 
             senior at the University of St. Thomas where I am studying Computer Science and 
-            Finance. I currently have not accepted a position any where for post graduation 
-            ,however, I am hoping to work in software development.
+            Finance. I currently have not accepted a position any where for post graduation, 
+            however, I am hoping to work in software development.
           </p>
         </div>
 
-        <div class="cell medium-auto large-5">
+        <div class="cell medium-auto large-auto">
           <h2>Six Interesting Discoveries</h2>
-          <ol>
-            1.<br />2.<br />3.<br />4.<br />5.<br />6.<br />
+          <ol type="1">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
           </ol>
         </div>
       </div>
@@ -449,8 +454,8 @@ export default {
           title="Rick Astley - Never Gonna Give You Up (Official Music Video)"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
+          allowfullscreen>
+        </iframe>
         <br />
       </div>
       <br />
