@@ -297,7 +297,7 @@ export default {
         <label for="max_incidents">Max Incidents</label>
         <input type="number"/>
 
-        <button class="button" type="button" @click=" ">View Crime Data</button>
+        <button class="button" type="button" @click="viewMap">View Crime Data</button>
         <IncidentsTable :result_array="incidents" />
       </div>
     </div>
