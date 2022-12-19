@@ -1,5 +1,6 @@
 <script>
 import $ from "jquery";
+import { resolveDirective } from "vue";
 import IncidentsTable from "./components/IncidentsTable.vue";
 
 
@@ -246,15 +247,43 @@ export default {
             //  const someMarker = n
             // someMarker.addTo(this.leaflet.map)
         
-/* this is complicated.. will be confusing to work around
     this.getJSON("http://localhost:8080/incidents").then(async (result) => {
         const pins = {};
+        const uniqueIncidents = [];
         for (const incident of result) {
+          if ((new Date(incident.date)).valueOf() > (new Date('2022-12-01')).valueOf()){
+            uniqueIncidents.push (incident);
+          }
+          else{
             if (!pins[incident.neighborhood_number]) {
                 pins[incident.neighborhood_number] = [];
             } else {
                 pins[incident.neighborhood_number].push(incident);
             }
+          }
+            
+        }
+
+
+        const formatBlock = (block) => { 
+        const strs = block.split(' ');  
+        strs[0] = strs[0].replace(/X/g, "0"); 
+        return strs.join(' '); 
+      }
+
+
+        for (const incident of uniqueIncidents) {
+          const { block } = incident;
+          const address = `${formatBlock (block)} ST PAUL`;
+          const [res] = JSON.parse((await this.uploadJSON('POST', 'http://localhost:8080/lookup', { address }))) ?? [];
+                if (res && res.lat && res.lon) {
+                    //console.log('GOT A THING TO DRAW')
+                    new L.Marker({
+                        ...res,
+                        color: "red",
+                        zIndexOffset: 1000
+                    }).addTo(this.leaflet.map);
+                }
         }
 
         const neighborhoods = Object.keys(pins)
@@ -264,22 +293,22 @@ export default {
             const [firstIncident] = pins?.[pinKey] ?? [];
             if (firstIncident) {
                 const { block } = firstIncident;
-                const address = `${block} ST PAUL`;
+                const address = `${formatBlock (block)} ST PAUL`;
                 const [res] = JSON.parse((await this.uploadJSON('POST', 'http://localhost:8080/lookup', { address }))) ?? [];
                 if (res && res.lat && res.lon) {
-                    console.log('GOT A THING TO DRAW')
+                    //console.log('GOT A THING TO DRAW')
                     const arrayOfIncidentsInThisPin = pins[pinKey]
-                    console.log('types: ', arrayOfIncidentsInThisPin.map(e=>e.incident));
+                    //console.log('types: ', arrayOfIncidentsInThisPin.map(e=>e.incident));
                     new L.Marker({
                         ...res,
                         zIndexOffset: 1000
                     }).addTo(this.leaflet.map);
                 }
             }
-            console.log(firstIncident);
+            //console.log(firstIncident);
         }
     });
-    */
+    
 
     this.getJSON("/data/StPaulDistrictCouncil.geojson")
       .then((result) => {
