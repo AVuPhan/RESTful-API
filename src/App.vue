@@ -334,17 +334,22 @@ export default {
       <div class="grid-x grid-padding-x">
         <!--<input type="number" name="max_incidents" v-model="max_incidents" /><br />-->
         <label for="date_time">Start Date and Time</label><br />
-        <input type="datetime-local" v-model="startdatetime" name="date_time"/>
+        <input type="date" v-model="startdatetime" name="date_time"/>
         <label for="date_time">End Date and Time</label><br />
-        <input type="datetime-local" v-model="enddatetime" name="date_time"/>
+        <input type="date" v-model="enddatetime" name="date_time"/>
         <label for="incident">Incident</label><br />
         <input type="text" v-model="incident_value" name="incident"/>
         <label for="neighborhood_number">Neighborhood Name</label><br/>
         <input type="number" v-model="neighborhood_number_value" name="neighborhood_number"/>
         <label for="max_incidents">Max Incidents</label>
         <input type="number" v-model="max_incidents" name="max_incidents"/>
-
         <button class="button" type="button" @click="viewMap">View Crime Data</button>
+        <div class="legend">
+          <p style="color: rgb(255, 0, 0)">Violent Crimes</p>
+          <p style="color: rgb(0, 140, 255)">Propert Crimes</p>
+          <p style="color: rgb(179, 179, 179)">Other Crimes</p>
+          <p></p>
+        </div>
         <IncidentsTable :result_array="incidents" />
       </div>
     </div>
@@ -467,6 +472,11 @@ export default {
   background-color: rgb(10, 100, 126);
   color: white;
   border: solid 1px white;
+  text-align: center;
+  cursor: pointer;
+}
+.legend {
+  border: solid 1px rgb(0, 0, 0);
   text-align: center;
   cursor: pointer;
 }
