@@ -301,7 +301,7 @@ export default {
         <label for="neighborhood_number">Neighborhood Number</label><br/>
         <input type="number" v-model="neighborhood_number_value" name="neighborhood_number"/>
 
-        <button class="button" type="button" @click="viewMap">View Crime Data</button>
+        <button class="button" type="button" @click=" ">View Crime Data</button>
         <IncidentsTable :result_array="incidents" />
       </div>
     </div>
