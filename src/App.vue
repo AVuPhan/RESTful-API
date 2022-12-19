@@ -50,6 +50,24 @@ export default {
   },
   methods: {
     viewMap(event) {
+      new L.Marker([44.942068, -93.020521]).addTo(this.leaflet.map);
+      new L.Marker([44.977413, -93.025156]).addTo(this.leaflet.map);
+      new L.Marker([44.931244, -93.079578]).addTo(this.leaflet.map);
+      new L.Marker([44.956192, -93.060189]).addTo(this.leaflet.map);
+      new L.Marker([44.978883, -93.068163]).addTo(this.leaflet.map);
+      new L.Marker([44.975766, -93.113887]).addTo(this.leaflet.map);
+      new L.Marker([44.959639, -93.121271]).addTo(this.leaflet.map);
+      new L.Marker([44.9477, -93.128505]).addTo(this.leaflet.map);
+      new L.Marker([44.930276, -93.119911]).addTo(this.leaflet.map);
+      new L.Marker([44.982752, -93.14791]).addTo(this.leaflet.map);
+      new L.Marker([44.963631, -93.167548]).addTo(this.leaflet.map);
+      new L.Marker([44.973971, -93.197965]).addTo(this.leaflet.map);
+      new L.Marker([44.949043, -93.178261]).addTo(this.leaflet.map);
+      new L.Marker([44.934848, -93.176736]).addTo(this.leaflet.map);
+      new L.Marker([44.913106, -93.170779]).addTo(this.leaflet.map);
+      new L.Marker([44.937705, -93.136997]).addTo(this.leaflet.map);
+      new L.Marker([44.949203, -93.093739]).addTo(this.leaflet.map);
+      
       let url = 'http://localhost:8080/incidents';
       if(this.startdatetime == null && this.enddatetime == null && this.incident_value == null && this.neighborhood_number_value == null && this.max_incidents == null){
       }
@@ -207,7 +225,7 @@ export default {
             //  const someMarker = n
             // someMarker.addTo(this.leaflet.map)
         
-//* this is complicated.. will be confusing to work around
+/* this is complicated.. will be confusing to work around
     this.getJSON("http://localhost:8080/incidents").then(async (result) => {
         const pins = {};
         for (const incident of result) {
@@ -240,7 +258,7 @@ export default {
             console.log(firstIncident);
         }
     });
-    //*/
+    */
 
     this.getJSON("/data/StPaulDistrictCouncil.geojson")
       .then((result) => {
