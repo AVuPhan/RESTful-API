@@ -50,7 +50,56 @@ export default {
   },
   methods: {
     viewMap(event) {
-      new L.Marker([44.942068, -93.020521]).addTo(this.leaflet.map);
+      let url = 'http://localhost:8080/incidents';
+      if(this.startdatetime == null && this.enddatetime == null && this.incident_value == null && this.neighborhood_number_value == null && this.max_incidents == null){
+      }
+      else{
+        url = url + "?"
+        let counter = 0;
+        if(this.neighborhood_number_value != null){
+          url = url + "neighborhood=" + this.neighborhood_number_value;
+          counter = counter + 1;
+        }
+        if(this.startdatetime != null){
+          if(counter > 0){
+            url = url + "&";
+          }
+          url = url + "start_date=" + this.startdatetime;
+          counter = counter + 1;
+        }
+        if(this.enddatetime != null){
+          if(counter > 0){
+            url = url + "&";
+          }
+          url = url + "end_date=" + this.enddatetime;
+          counter = counter + 1;
+        }
+        if(this.incident_value != null){
+          if(counter > 0){
+            url = url + "&";
+          }
+          url = url + "code=" + this.incident_value;
+          counter = counter + 1;
+        }
+        if(this.max_incidents != null){
+          if(counter > 0){
+            url = url + "&";
+          }
+          url = url + "limit=" + this.max_incidents;
+          counter = counter + 1;
+        }
+      }
+      this.getJSON(url)
+        .then((result) => {
+          console.log("hello");
+          console.log(result);
+          this.incidents = result;
+          console.log("What are these: " + this.incidents[0]);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      new L.Marker([44.942068, -93.020521]).addTo(this.leaflet.map).bindPopup("1");
       new L.Marker([44.977413, -93.025156]).addTo(this.leaflet.map);
       new L.Marker([44.931244, -93.079578]).addTo(this.leaflet.map);
       new L.Marker([44.956192, -93.060189]).addTo(this.leaflet.map);
@@ -67,34 +116,6 @@ export default {
       new L.Marker([44.913106, -93.170779]).addTo(this.leaflet.map);
       new L.Marker([44.937705, -93.136997]).addTo(this.leaflet.map);
       new L.Marker([44.949203, -93.093739]).addTo(this.leaflet.map);
-      
-      let url = 'http://localhost:8080/incidents';
-      if(this.startdatetime == null && this.enddatetime == null && this.incident_value == null && this.neighborhood_number_value == null && this.max_incidents == null){
-      }
-      else{
-        url = url + "?"
-        let counter = 0;
-        if(this.neighborhood_number_value != null){
-          url = url + "neighborhood=" + this.neighborhood_number_value;
-          counter = counter + 1;
-        }
-        if(this.max_incidents != null){
-          if(counter > 0){
-            url = url + "&";
-          }
-          url = url + "limit=" + this.max_incidents;
-          counter = counter + 1;
-        }
-      }
-      this.getJSON(url)
-        .then((result) => {
-          console.log(result);
-          this.incidents = result;
-          console.log(this.incidents);
-      })
-      .catch((err) => {
-        console.log(err);
-      })
       this.view = "map";
     },
 
