@@ -438,12 +438,12 @@ export default {
         <div class="cell medium-auto large-auto">
           <h2>Six Interesting Discoveries</h2>
           <ol type="1">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>The majority of crimes commited were either property related or other</li>
+            <li>A large majority of the crimes were thefts</li>
+            <li>Capitol River had the most crime reported</li>
+            <li>Summit Hill had the least crime reported</li>
+            <li>Capitol River and Summit Hill share a border and are at oppisite ends in terms of crimes reported</li>
+            <li>Many neighborhoods fell between two extremes of crimes reported and not many where at the mean</li>
           </ol>
         </div>
       </div>
