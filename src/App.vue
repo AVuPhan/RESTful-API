@@ -303,7 +303,7 @@ export default {
         <label for="neighborhood_number">Neighborhood Name</label><br/>
         <input type="number" v-model="neighborhood_number_value" name="neighborhood_number"/>
         <label for="max_incidents">Max Incidents</label>
-        <input type="number"/>
+        <input type="number" v-model="max_incidents" name="max_incidents"/>
 
         <button class="button" type="button" @click="viewMap">View Crime Data</button>
         <IncidentsTable :result_array="incidents" />
