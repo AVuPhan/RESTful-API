@@ -55,8 +55,17 @@ export default {
       }
       else{
         url = url + "?"
+        let counter = 0;
+        if(this.neighborhood_number_value != null){
+          url = url + "neighborhood=" + this.neighborhood_number_value;
+          counter = counter + 1;
+        }
         if(this.max_incidents != null){
+          if(counter > 0){
+            url = url + "&";
+          }
           url = url + "limit=" + this.max_incidents;
+          counter = counter + 1;
         }
       }
       this.getJSON(url)
