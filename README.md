@@ -1,3 +1,9 @@
+# St. Paul Crime Visualizer 🔫
+- Project 4 from CISC Web Development class
+- Learned about RESTful APIs & how to build a website that gets info from other sites
+- Implemented web requests to filter by crime type, neghborhood, etc
+- 
+
 ### Languages & Tools used: 🧰
 <div>
   <img src="https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-original.svg" title="JavaScript" alt="JavaScript" width="40" height="40"/>&nbsp;
@@ -8,3 +14,12 @@
   <img src="https://github.com/devicons/devicon/blob/master/icons/git/git-original-wordmark.svg" title="Git" **alt="Git" width="40" height="40"/>
   <img src="https://github.com/devicons/devicon/blob/master/icons/mysql/mysql-original-wordmark.svg" title="MySQL"  alt="MySQL" width="40" height="40"/>&nbsp;
 </div>
+
+### How to run program: 🛠️
+- Download & run Visual Studio Code
+- Download a bunch of extensions
+- Download code from this repository
+- Get neccessary files (client/machine specific files)
+npm install
+- to run the application
+run nvm
