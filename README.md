@@ -19,7 +19,7 @@
 - Download & run Visual Studio Code
 - Download a bunch of extensions
 - Download code from this repository
-- Get neccessary files (client/machine specific files)
-npm install
-- to run the application
-run nvm
+- In the terminal, run the command to get neccessary files (client/machine specific files):
+``npm install``
+- To run the application, type the following command:
+``run nvm``
