@@ -1,6 +1,6 @@
 # St. Paul Crime Visualizer 🔫
-- Project 4 from CISC Web Development class
-- Learned about RESTful APIs & how to build a website that gets info from other sites
+- Project 4 from CISC Web Development course.
+- Learned about RESTful APIs & how to build a website that gets info from other sites.
 - Implemented web requests which allows the user to do the following actions:
 - Submit a crime incident.
 - Search & filter incidents by crime type, neghborhood, etc
@@ -20,7 +20,7 @@
 
 ### How to run program: 🛠️
 - Download & run Visual Studio Code
-- Install the following extensions: 
+- Install the following extensions: Live Share, HTML CSS Support, & Live Server.
 - Download code from this repository
 - In the terminal, run the command to get neccessary files (client/machine specific files):
 ``npm install``
