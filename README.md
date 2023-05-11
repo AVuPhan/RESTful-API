@@ -20,7 +20,7 @@
 
 ### How to run program: 🛠️
 - Download & run Visual Studio Code.
-- Install the following extensions: Live Share, HTML CSS Support, & Live Server.
+- Install the following extensions: Live Share, HTML CSS Support, GitLens, NPM, Vue, Javascript, VIM(optional), & Live Server.
 - Download code from this repository.
 - In the terminal, run the command to get neccessary files (client/machine specific files):
 ``npm install``
